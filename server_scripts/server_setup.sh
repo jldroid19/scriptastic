@@ -13,17 +13,10 @@ NC='\033[0m'  # No Color
 echo -e "${GREEN}"
         cat << "EOF"
                                              
-                               
- (                                           
- )\ )                   )           )        
-(()/(    (  (        ( /(   )    ( /((       
- /(_)) ( )( )\ `  )  )\()| /( (  )\())\  (   
-(_))   )(()((_)/(/( (_))/)(_)))\(_))((_) )\  
-/ __| ((_|(_|_|(_)_\| |_((_)_((_) |_ (_)((_) 
-\__ \/ _| '_| | '_ \)  _/ _` (_-<  _|| / _|  
-|___/\__|_| |_| .__/ \__\__,_/__/\__||_\__|  
-              |_|                            
-
+//    _           _                
+//   /_/  _   _  /_` _  _   _  _  _
+//  / /  /_/ /_/._/ /_'/ |//_'/ _\ 
+//      /   /                      
 
 EOF
 
@@ -33,9 +26,9 @@ echo -e "${NC}Welcome to Scriptastic Server Setup!"
 # Prompt the user with options
 echo "Server Setup Script"
 echo "Please choose an option:"
-echo "1. Web Server (Python/Node.js)"
+echo "1. API Server (Flask API)"
 echo "2. Web Server (Apache/PHP)"
-echo "3. Option 3"
+echo "3. Docker Host (Docker CE))"
 echo "4. File Transfer (SFTP w/ Ngrok)"
 echo "5. Option 3"
 read -p "Enter your choice (1-5): " choice
@@ -44,11 +37,11 @@ read -p "Enter your choice (1-5): " choice
 case $choice in
     1)
         echo "Setting up Web Server..."
-        ./webserver_pysetup.sh
+        ./server_scripts/webserver_pysetup.sh
         ;;
     2)
         echo "Executing Apache / PHP server script..."
-        ./webserver_apache_setup.sh
+        ./server_scripts/webserver_apache_setup.sh
         ;;
     3)
         echo "Executing Option 3 script..."
