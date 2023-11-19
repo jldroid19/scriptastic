@@ -6,7 +6,7 @@ until mysqladmin ping -h mysqldb --silent; do
 done
 
 mysql -h mysqldb -u root -p"$MYSQL_ROOT_PASSWORD" <<EOF
-CREATE USER 'remote'@'%' IDENTIFIED BY '1qaz2wsxQAZWSX';
+CREATE USER 'remote'@'%' IDENTIFIED BY '';
 GRANT ALL PRIVILEGES ON *.* TO 'remote'@'%';
 FLUSH PRIVILEGES;
 EOF
