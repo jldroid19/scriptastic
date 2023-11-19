@@ -1,0 +1,24 @@
+version: '3.4'
+
+services:
+  mariadb:
+    image: mariadb:latest
+    restart: always
+    # volumes: 
+    #   - "/var/lib/mysql/data:${MARIADB_DATA_DIR}"
+    #   - "/var/lib/mysql/logs:${MARIADB_LOG_DIR}"
+    #   - /var/docker/mariadb/conf:/etc/mysql
+    environment:
+      MARIADB_ROOT_PASSWORD: admin
+      MARIADB_DATABASE: mgis_dev
+      # MARIADB_USER: root
+      # MARIADB_PASSWORD: admin
+    ports:
+      - "3306:3306"
+    networks:
+      - backend
+
+networks:
+  backend:
+# One Liner Database Setup
+# docker run -p 127.0.0.1:3306:3306  --name mdb -e MARIADB_ROOT_PASSWORD=admin -d mariadb:latest
